@@ -33,13 +33,10 @@ import AdminInvestmentPlans from './pages/admin/AdminInvestmentPlans';
 import WalletManagement from './pages/admin/WalletManagement';
 import PaymentProofs from './pages/admin/PaymentProofs';
 import AdminWallets from './pages/admin/AdminWallets';
-import AdminKYCManagement from './pages/admin/AdminKYCManagement';
-
 
 // Protected route components
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
-
 
 import Maintenance from './pages/Maintenance';
 const MAINTENANCE_MODE = import.meta.env.VITE_MAINTENANCE_MODE || false;
@@ -50,7 +47,7 @@ function App() {
   if (MAINTENANCE_MODE) {
     return <Maintenance />;
   }
-
+  
   return (
     <Router>
       <Toaster 
@@ -105,7 +102,6 @@ function App() {
             <Route path="wallets" element={<WalletManagement />} />
             <Route path="payment-proofs" element={<PaymentProofs />} />
             <Route path="admin-wallets" element={<AdminWallets />} />
-            <Route path="kyc" element={<AdminKYCManagement />} />
           </Route>
         </Route>
       </Routes>
